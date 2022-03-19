@@ -20,6 +20,6 @@ jobs:
         run: |
           git config user.email "janakar.muthuraj@gmail.com"
           git config user.name "JanakarM"
-          git add build
+          git add build/libs/.
           git commit -m "build generated"
           git push
