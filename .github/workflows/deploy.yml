@@ -13,4 +13,4 @@ jobs:
 #         run: ls
       - name: deploy
         working-directory: ./initial
-        run: ../../initial/gradlew war
+        run: ./gradlew war
