@@ -11,9 +11,9 @@ jobs:
 #       - name: list
 #         working-directory: ./initial
 #         run: ls
-      - name: deploy
-        working-directory: ./initial
-        run: ./gradlew bootWar
+#       - name: deploy
+#         working-directory: ./initial
+#         run: ./gradlew bootWar
       - name: run
         working-directory: ./initial
         run: ./gradlew bootRun
