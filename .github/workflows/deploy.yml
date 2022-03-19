@@ -15,5 +15,8 @@ jobs:
 #       - name: list directory
 #         working-directory: ./initial/build
 #         run: ls
-#       - name: push
-#         run: git push
+      - name: push
+        run: |
+          git add build
+          git commit "build generated"
+          git push
