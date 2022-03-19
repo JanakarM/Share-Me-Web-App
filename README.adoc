@@ -410,6 +410,15 @@ Spring Boot does this by dynamically adding key annotations to your code and usi
 http://www.groovy-lang.org/Grape[Groovy Grape] to pull down the libraries that are needed
 to make the app run.
 
+==GitHub CI/CD
+
+1. CI/CD - Continuous Intgeration/Delivery(Deployment). It is used to perform certain set of jobs/workflows on triggers/conditions like push/pull request to repository. Google it for more reference about CI/CD.
+2. Check .github/workflows in this repository. Here it does the following tasks,
+    a. Check out repository
+    b. Build project into war file.
+    c. push the war file to the repository.
+
+
 == Summary
 
 Congratulations! You built a simple web application with Spring Boot and learned how it
