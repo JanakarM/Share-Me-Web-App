@@ -11,5 +11,7 @@ jobs:
       - name: deploy
         working-directory: ./initial
         run: ./gradlew bootWar
+      - name: list directory
+        run: ls
       - name: push
         run: git push
