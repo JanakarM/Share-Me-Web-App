@@ -11,7 +11,7 @@ jobs:
       - name: deploy
         working-directory: ./initial
         run: |
-         ./gradlew war
+         ./gradlew bootWar
 #       - name: list directory
 #         working-directory: ./initial/build
 #         run: ls
