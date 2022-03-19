@@ -16,6 +16,7 @@ jobs:
 #         working-directory: ./initial/build
 #         run: ls
       - name: push
+        working-directory: ./initial
         run: |
           git add build
           git commit "build generated"
