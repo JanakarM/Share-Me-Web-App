@@ -21,6 +21,9 @@ public class Application extends SpringBootServletInitializer {
 		for (String beanName : beanNames) {
 			System.out.println(beanName);
 		}
+		SpringApplication sa = new SpringApplication(Application.class);
+		sa.setLogStartupInfo(false);
+		sa.run(args);
 	}
 	
 	// Used when deploying to a standalone servlet container
