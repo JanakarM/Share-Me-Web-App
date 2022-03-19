@@ -13,5 +13,8 @@ jobs:
         run: |
          ./gradlew bootWar
          ls
+      - name: list directory
+        working-directory: ./initial/build
+        run: ls
       - name: push
         run: git push
