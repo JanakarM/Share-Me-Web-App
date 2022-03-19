@@ -8,8 +8,9 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - name: list
+#       - name: list
+#         working-directory: ./initial
+#         run: ls
+      - name: deploy
         working-directory: ./initial
-        run: ls
-#       - name: deploy
-#         run: ../../initial/gradlew war
+        run: ../../initial/gradlew war
