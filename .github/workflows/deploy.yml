@@ -9,4 +9,4 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       - name: deploy
-        run: ./gradlew war
+        run: ../../initial/gradlew war
