@@ -20,4 +20,6 @@ jobs:
         run: |
           git add build
           git commit -m "build generated"
+          git config user.email "janakar.muthuraj.com"
+          git config user.name "JanakarM"
           git push
