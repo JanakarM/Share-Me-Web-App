@@ -24,6 +24,6 @@ test {
 }
 
 bootWar {
-    baseName = 'service'
-    archiveName 'service.war'
+    baseName = 'spring-boot-tutorial'
+    archiveName 'spring-boot-tutorial.war'
 }
