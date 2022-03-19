@@ -18,8 +18,8 @@ jobs:
       - name: push
         working-directory: ./initial
         run: |
+          git config user.email "janakar.muthuraj@gmail.com"
+          git config user.name "JanakarM"
           git add build
           git commit -m "build generated"
-          git config user.email "janakar.muthuraj.com"
-          git config user.name "JanakarM"
           git push
