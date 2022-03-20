@@ -14,7 +14,7 @@ jobs:
         working-directory: ./initial
         run: |
          ./gradlew bootWar
-         ./gradlew jar
+         ./gradlew build
 #       - name: list directory
 #         working-directory: ./initial/build
 #         run: ls
