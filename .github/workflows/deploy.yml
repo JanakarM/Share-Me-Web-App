@@ -30,7 +30,7 @@ jobs:
         with:
             heroku_api_key: ${{secrets.HEROKU_API_KEY}}
             heroku_email: ${{secrets.HEROKU_EMAIL}}
-            heroku_app_name: ${{secrets.HEROKU_APP}}
+            heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
             appdir: ${{secrets.APP_DIR}}
 #             appdir: ./initial
             dontautocreate: ${{secrets.DO_NOT_AUTO_CREATE_APP}}
