@@ -16,7 +16,7 @@ public class HelloController {
 		return "Hello! How are you?";
 	}
 	
-	@GetMapping("/End")
+	@GetMapping("/Bye")
 	public String end() {
 		return "Good bye!";
 	}
