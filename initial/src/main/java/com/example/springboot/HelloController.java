@@ -12,12 +12,12 @@ public class HelloController {
 	}
 	
 	@GetMapping("/Hai")
-	public String index() {
+	public String hai() {
 		return "Hello! How are you?";
 	}
 	
 	@GetMapping("/End")
-	public String index() {
+	public String end() {
 		return "Good bye!";
 	}
 
