@@ -27,3 +27,8 @@ bootWar {
     baseName = 'spring-boot-tutorial'
     archiveName 'spring-boot-tutorial.war'
 }
+
+bootWar {
+    baseName = 'spring-boot-tutorial'
+    archiveName 'spring-boot-tutorial.jar'
+}
