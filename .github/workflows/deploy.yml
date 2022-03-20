@@ -24,7 +24,7 @@ jobs:
 #           git config user.name "JanakarM"
 #           git add build
 #           git commit -m "build generated"
-#           git push
+#           git push .
       - name: Deploy to Heroku
         uses: AkhileshNS/heroku-deploy@v3.12.12
         with:
