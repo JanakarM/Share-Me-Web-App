@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.example'
-version = '0.0.1-SNAPSHOT'
+version = '1.0'
 sourceCompatibility = '1.8'
 
 repositories {
@@ -28,7 +28,7 @@ bootWar {
     archiveName 'spring-boot-tutorial.war'
 }
 
-jar {
+bootJar {
     baseName = 'spring-boot-tutorial'
     archiveName 'spring-boot-tutorial.jar'
 }
