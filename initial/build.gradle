@@ -32,8 +32,3 @@ bootJar {
     baseName = 'spring-boot-tutorial'
     archiveName 'spring-boot-tutorial.jar'
 }
-
-jar {
-    baseName = 'spring-boot-tutorial'
-    archiveName 'spring-boot-tutorial.jar'
-}
