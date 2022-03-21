@@ -10,10 +10,10 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - name: build
-        working-directory: ./initial
-        run: |
-         ./gradlew bootJar
+      # - name: build
+      #   working-directory: ./initial
+        # run: |
+        #  ./gradlew bootJar
 #       - name: list directory
 #         working-directory: ./initial/build
 #         run: ls

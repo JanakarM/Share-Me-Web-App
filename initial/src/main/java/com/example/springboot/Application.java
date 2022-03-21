@@ -5,11 +5,12 @@ import java.util.Arrays;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+// import org.springframework.boot.builder.SpringApplicationBuilder;
+// import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class Application extends SpringBootServletInitializer {
+// public class Application extends SpringBootServletInitializer {
+public class Application{
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(Application.class, args);
@@ -24,9 +25,9 @@ public class Application extends SpringBootServletInitializer {
 	}
 	
 	// Used when deploying to a standalone servlet container
-	    @Override
-	    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(Application.class);
-	    }
+	// @Override
+	// protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+	// return application.sources(Application.class);
+	// }
 	
 }

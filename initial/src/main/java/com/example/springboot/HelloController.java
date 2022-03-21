@@ -17,7 +17,7 @@ public class HelloController {
 	}
 	
 	@GetMapping("/Bye")
-	public String hai() {
+	public String bye() {
 		return "Bye! Hope to see you again.";
 	}
 }
