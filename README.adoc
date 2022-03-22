@@ -2,10 +2,20 @@
 
 1. Built a simple web application with Spring Boot using gradle tool.
 2. Will be deployed as war file to be used in web servlet containers like tomcat.
+3. Deployed as jar and run standalone.
+4. Spring MVC - displaing pre-defined views as response to rest api request. Thymeleaf will be used as ViewResolver.
+5. PIPELINE:
+    1. Securing web application.
+    2. Using database.
+    3. Using actuators to audit and monitor application.
+    4. Writing tests for application.
+    5. Deploy 3 to 4 spring boot applications as microsservices and establish asynchronous communication using message brokers
+     to perform a complex task with each microservice playing a part in the whole system.
 
 == GitHub CI/CD
 
-1. CI/CD - Continuous Intgeration/Delivery(Deployment). It is used to perform certain set of jobs/workflows on triggers/conditions like push/pull request to repository. The jobs can be run in github runners or self-hosted runners. Google it for more reference about CI/CD.
+1. CI/CD - Continuous Intgeration/Delivery(Deployment). It is used to perform certain set of jobs/workflows on triggers/conditions
+ like push/pull request to repository. The jobs can be run in github runners or self-hosted runners. Google it for more reference about CI/CD.
 2. Check .github/workflows in this repository. Here it does the following tasks,
     a. Check out repository
     b. Build project into war file.
