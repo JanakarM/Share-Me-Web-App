@@ -11,12 +11,12 @@ public class HelloController {
 		return "Greetings from Spring Boot!";
 	}
 	
-	@GetMapping("/Hai")
+	// @GetMapping("/Hai")
 	public String hai() {
 		return "Hello!";
 	}
 	
-	@GetMapping("/Bye")
+	// @GetMapping("/Bye")
 	public String bye() {
 		return "Bye! Hope to see you again.";
 	}

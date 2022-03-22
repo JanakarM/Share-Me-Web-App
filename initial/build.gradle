@@ -1,3 +1,5 @@
+// println "org.gradle.java.home"
+
 plugins {
 	id 'org.springframework.boot' version '2.6.3'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -14,6 +16,7 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	// providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	//testImplementation 'org.springframework.boot:spring-boot-starter-test'
