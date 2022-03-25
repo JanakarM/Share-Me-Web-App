@@ -1,4 +1,4 @@
-package com.example.springboot;
+package com.example.accessingdatamysql;
 
 import java.util.Arrays;
 
@@ -10,7 +10,8 @@ import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 // public class Application extends SpringBootServletInitializer {
-public class Application{
+public class DBManagerApplication{
+
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(Application.class, args);
 
@@ -27,5 +28,6 @@ public class Application{
 	// @Override
 	// protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 	// return application.sources(Application.class);
-	// }	
+	// }
+	
 }

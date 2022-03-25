@@ -1,0 +1,34 @@
+// println "org.gradle.java.home"
+
+plugins {
+	id 'org.springframework.boot' version '2.6.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	// id 'war'
+}
+
+group = 'com.example'
+version = '1.0'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'org.postgresql:postgresql'
+	// providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	//testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+// bootWar {
+//     baseName = 'spring-boot-tutorial'
+//     archiveName 'spring-boot-tutorial.war'
+// }
