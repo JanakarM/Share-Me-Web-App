@@ -1,10 +1,12 @@
 == Spring Boot
 
 1. Built a simple web application with Spring Boot using gradle tool.
-2. Will be deployed as war file to be used in web servlet containers like tomcat.
+2. Deployed as war file to be used in web servlet containers like tomcat.
 3. Deployed as jar and run standalone.
 4. Spring MVC - displaing pre-defined views as response to rest api request. Thymeleaf will be used as ViewResolver.
-5. PIPELINE:
+5. database-manager-service - 
+6. Synchronous Inter service communication achieved. Communicated with a database-manager-service.
+7. PIPELINE:
     1. Securing web application.
     2. Using database.
     3. Using actuators to audit and monitor application.
