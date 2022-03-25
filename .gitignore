@@ -35,3 +35,4 @@ initial/build/tmp/war/MANIFEST.MF
 initial/build
 initial/.gradle/workspace-id.txt
 initial/.gradle/workspace-id.txt.lock
+database-manager-service
