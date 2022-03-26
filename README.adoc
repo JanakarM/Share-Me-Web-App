@@ -4,14 +4,13 @@
 2. Deployed as war file to be used in web servlet containers like tomcat.
 3. Deployed as jar and run standalone.
 4. Spring MVC - displaing pre-defined views as response to rest api request. Thymeleaf will be used as ViewResolver.
-5. database-manager-service - 
+5. database-manager-service - manages database access on top of hibernate and jpa.
 6. Synchronous Inter service communication achieved. Communicated with a database-manager-service.
 7. PIPELINE:
     1. Securing web application.
-    2. Using database.
-    3. Using actuators to audit and monitor application.
-    4. Writing tests for application.
-    5. Deploy 3 to 4 spring boot applications as microsservices and establish asynchronous communication using message brokers
+    2. Using actuators to audit and monitor application.
+    3. Writing tests for application.
+    4. Deploy 3 to 4 spring boot applications as microsservices and establish asynchronous communication using message brokers
      to perform a complex task with each microservice playing a part in the whole system.
 
 == GitHub CI/CD
