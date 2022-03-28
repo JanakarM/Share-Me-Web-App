@@ -1,0 +1,11 @@
+eureka:
+  client:
+    serviceUrl: 
+      defaultZone: http://localhost:1111/eureka
+    healthcheck:
+      enabled: false
+  # instance:
+  #   metadataMap:
+  #     instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+server:
+  port: 2222

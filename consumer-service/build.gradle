@@ -7,15 +7,33 @@ plugins {
 	// id 'war'
 }
 
+ext {
+    set('springCloudVersion', "2021.0.0")
+}
+
 group = 'com.example'
 version = '1.0'
 sourceCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
+	// jcenter()
+    // maven { url 'https://repo.spring.io/release/' }
+    // maven { url "https://repo.spring.io/libs-snapshot-local" }
+    // maven { url "https://repo.spring.io/libs-milestone-local" }
+    // maven { url "https://repo.spring.io/libs-release-local" }
+}
+
+dependencyManagement {
+	imports { 
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
 }
 
 dependencies {
+	implementation 'org.springframework.cloud:spring-cloud-starter'
+	implementation 'org.springframework.cloud:spring-cloud-starter-loadbalancer'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	// providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
