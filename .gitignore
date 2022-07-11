@@ -1,3 +1,20 @@
 .gradle
 build
 local.properties
+/rest_service/.gitignore
+/.idea/compiler.xml
+/.idea/encodings.xml
+/.idea/gradle.xml
+/.idea/jarRepositories.xml
+/.idea/jpa-buddy.xml
+/rest_service/.mvn/wrapper/maven-wrapper.jar
+/.idea/misc.xml
+/rest_service/mvnw
+/rest_service/mvnw.cmd
+/.idea/uiDesigner.xml
+/rest_service/uploads/user_profile_1_1657467341188_1.jpg
+/rest_service/uploads/user_profile_2_1657467356772_2.jpg
+/rest_service/uploads/user_profile_3_1657467369526_3.jpg
+/rest_service/uploads/user_profile_4_1657467392406_4.jpg
+/rest_service/uploads/user_profile_5_1657467418898_5.jpg
+/rest_service/uploads/user_profile_Janakar M_1657466767122.jpg
