@@ -17,6 +17,8 @@ public class FileController {
     @GetMapping("/download")
     ResponseEntity<Resource> download(@RequestParam(value = "fileName") String fileName){
         Resource file= fileStorageService.download(fileName);
-        return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION, String.format("attachment; filename=\"%s\"", file.getFilename())).body(file);
+        return ResponseEntity.ok().
+                header(HttpHeaders.CONTENT_DISPOSITION, String.format("attachment; filename=%s", file.getFilename())).
+                body(file);
     }
 }

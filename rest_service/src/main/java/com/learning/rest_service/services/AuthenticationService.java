@@ -1,0 +1,35 @@
+package com.learning.rest_service.services;
+
+import com.learning.rest_service.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Service;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+@Service
+public class AuthenticationService {
+    @Autowired
+    GoogleLoginService googleLoginService;
+    public User verifySignature(String token){
+        return googleLoginService.verifySignature(token);
+    }
+    public void updateSecurityContextWithLoggedInUserDetails(User user){
+        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken= new UsernamePasswordAuthenticationToken(user.getName(), null, Arrays.asList(new SimpleGrantedAuthority("ROLE_USER")));
+        usernamePasswordAuthenticationToken.setDetails(user);
+        SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+    }
+    public Map<String, String> currentUser(){
+        Authentication auth= SecurityContextHolder.getContext().getAuthentication();
+        if(auth.isAuthenticated() && !(auth instanceof AnonymousAuthenticationToken)){
+            return (Map<String, String>) auth.getDetails();
+        }
+        return null;
+    }
+}

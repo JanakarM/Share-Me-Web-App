@@ -4,6 +4,7 @@ import com.learning.rest_service.model.User;
 import com.learning.rest_service.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -23,6 +24,11 @@ public class UserController {
         return userService.getUserByName(name);
     }
 
+    @GetMapping("/me")
+    Object me(Authentication auth){
+        return auth!=null? auth.getDetails(): null;
+    }
+
     @GetMapping("/{id}")
     User getUser(@PathVariable Long id){
         return userService.getUserById(id);
@@ -32,6 +38,12 @@ public class UserController {
     String deleteUser(@PathVariable Long id){
         userService.deleteUser(id);
         return "Deleted";
+    }
+
+
+    @GetMapping("/login")
+    User login(@RequestHeader String Authorization){
+        return userService.login(Authorization.replace("Bearer ", ""));
     }
 
     @PostMapping(

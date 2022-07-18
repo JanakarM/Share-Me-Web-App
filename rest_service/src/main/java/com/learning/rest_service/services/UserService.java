@@ -2,14 +2,13 @@ package com.learning.rest_service.services;
 
 import com.learning.rest_service.model.User;
 import com.learning.rest_service.storage.database.UserRepository;
-import com.learning.rest_service.storage.file.FileHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -18,6 +17,8 @@ public class UserService {
     UserRepository userRepository;
     @Autowired
     FileStorageService fileStorageService;
+    @Autowired
+    AuthenticationService authenticationService;
     @Autowired
     RestTemplate restTemplate;
 
@@ -51,5 +52,16 @@ public class UserService {
             }
             return userRepository.save(new User(name, email, fileName));
         });
+    }
+
+    public User login(String token){
+        User user= authenticationService.verifySignature(token);
+        user= addUser(user.getName(), user.getEmail(), user.getProfilePicUrl());
+        authenticationService.updateSecurityContextWithLoggedInUserDetails(user);
+        return user;
+    }
+
+    public Map<String, String> me(){
+        return authenticationService.currentUser();
     }
 }
