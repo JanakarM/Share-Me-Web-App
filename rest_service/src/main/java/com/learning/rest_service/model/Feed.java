@@ -1,6 +1,8 @@
 package com.learning.rest_service.model;
 
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Feed {
@@ -11,6 +13,9 @@ public class Feed {
     private String imageUrl;
     private String about;
     private String siteUrl;
+
+    @OneToMany(mappedBy = "feed", cascade = CascadeType.REMOVE)
+    private List<SavedFeed> savedFeedList;
     @OneToOne
     @JoinColumn(name = "author_id")
     private User author;
@@ -27,6 +32,10 @@ public class Feed {
     }
 
     public Feed() {
+    }
+
+    public Feed(Long id) {
+        this.id=id;
     }
 
     public Feed(String title, String imageUrl, String about, String siteUrl, User author, Category category) {
@@ -60,5 +69,9 @@ public class Feed {
 
     public void setAuthor(User author) {
         this.author = author;
+    }
+
+    public String getTitle() {
+        return title;
     }
 }

@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FeedService {
@@ -18,6 +18,8 @@ public class FeedService {
     CategoryService categoryService;
     @Autowired
     FileStorageService fileStorageService;
+    @Autowired
+    UserService userService;
     public String addFeed(String title, String about, String siteUrl, Long authorId, MultipartFile image, Long categoryId){
         try {
             String fileName= String.format("feed_%s_%s_%s", title,System.currentTimeMillis(), image.getOriginalFilename());
@@ -29,8 +31,16 @@ public class FeedService {
         }
     }
 
+    public Optional<Feed> getFeed(Long id){
+        return feedRepository.findById(id);
+    }
+
     public Iterable<Feed> listFeeds(){
         return feedRepository.findAll();
+    }
+
+    public Iterable getSavedFeeds(){
+        return userService.getSavedFeeds();
     }
 
     public Iterable<Category> listCategories(){
@@ -39,5 +49,13 @@ public class FeedService {
 
     public void deleteFeed(Long id){
         feedRepository.deleteById(id);
+    }
+
+    public void saveFeed(Long feedId){
+        userService.saveFeed(feedId);
+    }
+
+    public void removeSavedFeed(Long feedId){
+        userService.removeSavedFeed(feedId);
     }
 }

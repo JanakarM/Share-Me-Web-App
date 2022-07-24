@@ -7,6 +7,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 @Configuration
 @EnableWebSecurity
@@ -14,7 +15,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class ApplicationSecurityConfig {
     @Bean
     public SecurityFilterChain createFilterChain(HttpSecurity http) throws Exception{
-        return http.
+        return http.csrf(csrf-> csrf.csrfTokenRepository(new CookieCsrfTokenRepository())).
                 authorizeHttpRequests(auth->
                         auth.
                                 antMatchers("/user/login").permitAll().

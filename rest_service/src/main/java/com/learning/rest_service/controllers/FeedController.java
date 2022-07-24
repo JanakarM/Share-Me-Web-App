@@ -8,7 +8,8 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/feed")
@@ -20,6 +21,22 @@ public class FeedController {
     @GetMapping()
     public Iterable<Feed> listFeeds(){
         return feedService.listFeeds();
+    }
+
+    @GetMapping("/saved")
+    public Iterable getSavedFeeds(){
+        return feedService.getSavedFeeds();
+    }
+
+    @DeleteMapping("/saved/remove")
+    public String removeSavedFeed(@RequestParam Long feedId){
+        feedService.removeSavedFeed(feedId);
+        return "Success";
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Feed> getFeed(@PathVariable Long id){
+        return feedService.getFeed(id);
     }
 
     @PostMapping(
@@ -45,5 +62,15 @@ public class FeedController {
     @GetMapping("/categories")
     Iterable<Category> listCategories(){
         return feedService.listCategories();
+    }
+
+    @PostMapping(
+            path= "/save",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.TEXT_PLAIN_VALUE
+    )
+    String add(@RequestBody Map<String, Long> payload){
+        feedService.saveFeed(payload.get("feedId"));
+        return "Success";
     }
 }

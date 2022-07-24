@@ -8,6 +8,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
@@ -30,7 +31,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    User getUser(@PathVariable Long id){
+    Optional<User> getUser(@PathVariable Long id){
         return userService.getUserById(id);
     }
 
@@ -39,7 +40,6 @@ public class UserController {
         userService.deleteUser(id);
         return "Deleted";
     }
-
 
     @GetMapping("/login")
     User login(@RequestHeader String Authorization){

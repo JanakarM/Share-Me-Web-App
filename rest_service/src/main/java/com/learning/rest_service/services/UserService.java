@@ -1,6 +1,9 @@
 package com.learning.rest_service.services;
 
+import com.learning.rest_service.model.Feed;
+import com.learning.rest_service.model.SavedFeed;
 import com.learning.rest_service.model.User;
+import com.learning.rest_service.storage.database.SavedFeedRepository;
 import com.learning.rest_service.storage.database.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -21,14 +24,15 @@ public class UserService {
     AuthenticationService authenticationService;
     @Autowired
     RestTemplate restTemplate;
+    @Autowired
+    SavedFeedRepository savedFeedRepository;
 
     public List<User> listUsers(){
         return (List<User>) userRepository.findAll();
     }
 
-    public User getUserById(Long id){
-        Optional<User> user= userRepository.findById(id);
-        return user.isPresent() ? user.get(): null;
+    public Optional<User> getUserById(Long id){
+        return userRepository.findById(id);
     }
 
     public Iterable<User> getUserByName(String name){
@@ -61,7 +65,19 @@ public class UserService {
         return user;
     }
 
-    public Map<String, String> me(){
+    public User me(){
         return authenticationService.currentUser();
+    }
+
+    public Iterable getSavedFeeds(){
+        return savedFeedRepository.findSavedFeedIdsForUserId(me().getId());
+    }
+
+    public void saveFeed(Long feedId){
+        savedFeedRepository.save(new SavedFeed(me(), new Feed(feedId)));
+    }
+
+    public void removeSavedFeed(Long feedId){
+        savedFeedRepository.removeSavedFeedForUserId(me().getId(), feedId);
     }
 }

@@ -25,10 +25,10 @@ public class AuthenticationService {
         usernamePasswordAuthenticationToken.setDetails(user);
         SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
     }
-    public Map<String, String> currentUser(){
+    public User currentUser(){
         Authentication auth= SecurityContextHolder.getContext().getAuthentication();
         if(auth.isAuthenticated() && !(auth instanceof AnonymousAuthenticationToken)){
-            return (Map<String, String>) auth.getDetails();
+            return (User) auth.getDetails();
         }
         return null;
     }
