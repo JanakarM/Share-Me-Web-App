@@ -15,10 +15,10 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 public class ApplicationSecurityConfig {
     @Bean
     public SecurityFilterChain createFilterChain(HttpSecurity http) throws Exception{
-        return http.csrf(csrf-> csrf.csrfTokenRepository(new CookieCsrfTokenRepository())).
+        return http.csrf(csrf-> csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())).
                 authorizeHttpRequests(auth->
                         auth.
-                                antMatchers("/user/login").permitAll().
+                                antMatchers("/user/login", "/").permitAll().
                                 antMatchers("/**").authenticated()
 //                                antMatchers("/feed").hasRole("USER").
 //                                antMatchers("/feed/").hasRole("ADMIN")
