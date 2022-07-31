@@ -22,7 +22,7 @@ public class FeedService {
     UserService userService;
     public String addFeed(String title, String about, String siteUrl, Long authorId, MultipartFile image, Long categoryId){
         try {
-            String fileName= String.format("feed_%s_%s_%s", title,System.currentTimeMillis(), image.getOriginalFilename());
+            String fileName= String.format("feed-images/feed_%s_%s_%s", title,System.currentTimeMillis(), image.getOriginalFilename());
             feedRepository.save(new Feed(title, fileName, about, siteUrl, new User(authorId), new Category(categoryId)));
             fileStorageService.store(image, fileName);
             return String.format("Successfully added feed '%s'", title);
@@ -39,7 +39,7 @@ public class FeedService {
         return feedRepository.findAll();
     }
     public Iterable<Feed> listFeeds(int pageNumber, int countPerPage){
-        return feedRepository.getFeedsByBatch(countPerPage*pageNumber+1, countPerPage);
+        return feedRepository.getFeedsByBatch(countPerPage*(pageNumber-1), countPerPage);
     }
 
     public Iterable getSavedFeeds(){

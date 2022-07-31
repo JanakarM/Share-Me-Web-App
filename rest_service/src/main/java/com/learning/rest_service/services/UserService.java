@@ -45,7 +45,7 @@ public class UserService {
 
     public User addUser(String name, String email, String profileImgaeUrl){
         Resource file= restTemplate.getForObject(profileImgaeUrl, Resource.class);
-        String fileName= String.format("user_profile_%s_%s.jpg", name,System.currentTimeMillis());
+        String fileName= String.format("user-profile-pictures/user_profile_%s_%s.jpg", name,System.currentTimeMillis());
 
         Optional<User> userOptional =  userRepository.findByEmail(email);
         return userOptional.orElseGet(() -> {
