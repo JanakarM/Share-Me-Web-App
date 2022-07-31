@@ -38,6 +38,9 @@ public class FeedService {
     public Iterable<Feed> listFeeds(){
         return feedRepository.findAll();
     }
+    public Iterable<Feed> listFeeds(int pageNumber, int countPerPage){
+        return feedRepository.getFeedsByBatch(countPerPage*pageNumber+1, countPerPage);
+    }
 
     public Iterable getSavedFeeds(){
         return userService.getSavedFeeds();

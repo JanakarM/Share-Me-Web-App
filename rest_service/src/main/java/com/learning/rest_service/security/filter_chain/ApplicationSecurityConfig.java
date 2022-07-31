@@ -4,8 +4,11 @@ import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.RequestMatcherRedirectFilter;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -35,6 +38,7 @@ public class ApplicationSecurityConfig {
                 .build();
     }
     static boolean checkRedirection(HttpServletRequest request){
-        return !request.getRequestURI().equals("/") && !request.getRequestURI().equals("/user/login") && !request.getRequestURI().equals("/user/me") && !request.getRequestURI().contains("/static/") && request.getUserPrincipal() == null;
+        Authentication auth= SecurityContextHolder.getContext().getAuthentication();
+        return !request.getRequestURI().equals("/") && !request.getRequestURI().equals("/user/login") && !request.getRequestURI().equals("/user/me") && !request.getRequestURI().contains("/static/") && (auth == null || !(auth.isAuthenticated() && !(auth instanceof AnonymousAuthenticationToken)));
     }
 }

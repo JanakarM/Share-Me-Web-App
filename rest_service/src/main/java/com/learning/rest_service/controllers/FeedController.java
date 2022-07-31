@@ -19,8 +19,8 @@ public class FeedController {
     FeedService feedService;
 
     @GetMapping()
-    public Iterable<Feed> listFeeds(){
-        return feedService.listFeeds();
+    public Iterable<Feed> listFeeds(@RequestParam Integer pageNumber, Integer countPerPage){
+        return feedService.listFeeds(pageNumber, countPerPage);
     }
 
     @GetMapping("/saved")
