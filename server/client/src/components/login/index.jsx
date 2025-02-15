@@ -6,6 +6,7 @@ import { getUserFromToken, setAuthToken } from '../../utils'
 import { login } from '../../state-management/reducers/logon-reducer'
 import React, { useEffect, useRef } from 'react'
 
+const google = window.google;
 const Login = ()=>{
     const user = useSelector(state => state.logon.user)
     const dispatch = useDispatch()
@@ -16,7 +17,7 @@ const Login = ()=>{
     }
     const signInDiv = useRef()
     useEffect(()=>{
-        /* global google */
+        
         google.accounts.id.initialize({
             client_id: process.env.REACT_APP_GOOGLE_API_CLIENT_ID,
             callback: responseGoogle
