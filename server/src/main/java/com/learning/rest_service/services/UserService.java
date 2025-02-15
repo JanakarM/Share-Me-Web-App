@@ -1,10 +1,10 @@
-package com.learning.rest_service.services;
+package com.learning.server.services;
 
-import com.learning.rest_service.model.Feed;
-import com.learning.rest_service.model.SavedFeed;
-import com.learning.rest_service.model.User;
-import com.learning.rest_service.storage.database.SavedFeedRepository;
-import com.learning.rest_service.storage.database.UserRepository;
+import com.learning.server.model.Feed;
+import com.learning.server.model.SavedFeed;
+import com.learning.server.model.User;
+import com.learning.server.storage.database.SavedFeedRepository;
+import com.learning.server.storage.database.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;

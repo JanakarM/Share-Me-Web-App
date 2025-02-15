@@ -1,9 +1,9 @@
-package com.learning.rest_service.services;
+package com.learning.server.services;
 
-import com.learning.rest_service.model.Category;
-import com.learning.rest_service.model.Feed;
-import com.learning.rest_service.model.User;
-import com.learning.rest_service.storage.database.FeedRepository;
+import com.learning.server.model.Category;
+import com.learning.server.model.Feed;
+import com.learning.server.model.User;
+import com.learning.server.storage.database.FeedRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;

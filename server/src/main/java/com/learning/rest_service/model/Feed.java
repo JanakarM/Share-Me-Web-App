@@ -1,4 +1,4 @@
-package com.learning.rest_service.model;
+package com.learning.server.model;
 
 
 import javax.persistence.*;

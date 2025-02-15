@@ -1,6 +1,6 @@
-package com.learning.rest_service.storage.database;
+package com.learning.server.storage.database;
 
-import com.learning.rest_service.model.SavedFeed;
+import com.learning.server.model.SavedFeed;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

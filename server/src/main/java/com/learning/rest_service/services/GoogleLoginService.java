@@ -1,8 +1,8 @@
-package com.learning.rest_service.services;
+package com.learning.server.services;
 
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
-import com.learning.rest_service.model.User;
+import com.learning.server.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

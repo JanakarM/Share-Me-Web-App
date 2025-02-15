@@ -1,6 +1,6 @@
-package com.learning.rest_service.controllers;
+package com.learning.server.controllers;
 
-import com.learning.rest_service.services.FileStorageService;
+import com.learning.server.services.FileStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;

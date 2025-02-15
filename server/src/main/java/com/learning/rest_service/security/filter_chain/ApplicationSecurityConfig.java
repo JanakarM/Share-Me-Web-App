@@ -1,4 +1,4 @@
-package com.learning.rest_service.security.filter_chain;
+package com.learning.server.security.filter_chain;
 
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;

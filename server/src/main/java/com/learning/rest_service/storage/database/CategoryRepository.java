@@ -1,6 +1,6 @@
-package com.learning.rest_service.storage.database;
+package com.learning.server.storage.database;
 
-import com.learning.rest_service.model.Category;
+import com.learning.server.model.Category;
 import org.springframework.data.repository.CrudRepository;
 
 public interface CategoryRepository extends CrudRepository<Category, Long> {

@@ -1,6 +1,6 @@
-package com.learning.rest_service.services;
+package com.learning.server.services;
 
-import com.learning.rest_service.storage.file.FileHandler;
+import com.learning.server.storage.file.FileHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;

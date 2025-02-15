@@ -1,7 +1,7 @@
-package com.learning.rest_service.services;
+package com.learning.server.services;
 
-import com.learning.rest_service.model.Category;
-import com.learning.rest_service.storage.database.CategoryRepository;
+import com.learning.server.model.Category;
+import com.learning.server.storage.database.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

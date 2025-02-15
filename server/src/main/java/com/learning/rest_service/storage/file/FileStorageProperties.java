@@ -1,4 +1,4 @@
-package com.learning.rest_service.storage.file;
+package com.learning.server.storage.file;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

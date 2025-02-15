@@ -1,7 +1,7 @@
-package com.learning.rest_service.controllers;
+package com.learning.server.controllers;
 
-import com.learning.rest_service.model.User;
-import com.learning.rest_service.services.UserService;
+import com.learning.server.model.User;
+import com.learning.server.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;

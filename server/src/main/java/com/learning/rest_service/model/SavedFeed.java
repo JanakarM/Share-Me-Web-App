@@ -1,4 +1,4 @@
-package com.learning.rest_service.model;
+package com.learning.server.model;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.OnDelete;

@@ -1,8 +1,8 @@
-package com.learning.rest_service.controllers;
+package com.learning.server.controllers;
 
-import com.learning.rest_service.model.Category;
-import com.learning.rest_service.model.Feed;
-import com.learning.rest_service.services.FeedService;
+import com.learning.server.model.Category;
+import com.learning.server.model.Feed;
+import com.learning.server.services.FeedService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

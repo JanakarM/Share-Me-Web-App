@@ -1,6 +1,6 @@
-package com.learning.rest_service.storage.database;
+package com.learning.server.storage.database;
 
-import com.learning.rest_service.model.User;
+import com.learning.server.model.User;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

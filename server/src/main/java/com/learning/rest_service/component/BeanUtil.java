@@ -1,4 +1,4 @@
-package com.learning.rest_service.component;
+package com.learning.server.component;
 
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
 import com.google.api.client.http.HttpTransport;

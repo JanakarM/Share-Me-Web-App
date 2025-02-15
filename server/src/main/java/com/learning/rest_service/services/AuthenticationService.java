@@ -1,6 +1,6 @@
-package com.learning.rest_service.services;
+package com.learning.server.services;
 
-import com.learning.rest_service.model.User;
+import com.learning.server.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
