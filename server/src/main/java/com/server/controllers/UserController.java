@@ -46,6 +46,12 @@ public class UserController {
         return userService.login(Authorization.replace("Bearer ", ""));
     }
 
+    @GetMapping("/logout")
+    String logout(){
+        userService.logout();
+        return "Logged Out";
+    }
+
     @PostMapping(
             path= "/add",
             consumes = MediaType.APPLICATION_JSON_VALUE,

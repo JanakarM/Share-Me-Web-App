@@ -64,6 +64,10 @@ public class UserService {
         return user;
     }
 
+    public void logout(){
+        authenticationService.logout();
+    }
+
     public User me(){
         return authenticationService.currentUser();
     }

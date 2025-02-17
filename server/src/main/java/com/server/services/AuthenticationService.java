@@ -23,6 +23,9 @@ public class AuthenticationService {
         usernamePasswordAuthenticationToken.setDetails(user);
         SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
     }
+    public void logout(){
+        SecurityContextHolder.clearContext();
+    }
     public User currentUser(){
         Authentication auth= SecurityContextHolder.getContext().getAuthentication();
         if(auth.isAuthenticated() && !(auth instanceof AnonymousAuthenticationToken)){

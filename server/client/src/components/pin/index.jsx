@@ -43,7 +43,7 @@ const Pin= ({ pin: {id, imageUrl, author, siteUrl, postSaved, savedCount}, saved
     
     return (
         <div ref={componentRef} className="m-1 mb-2">
-            <div className="relative cursor-zoom-in" 
+            <div className="relative cursor-zoom-in mb-1"
                 onMouseEnter={(e)=> setPostHovered(true)} 
                 onMouseLeave={(e)=> setPostHovered(false)}
                 onClick={(e)=> navigate(`/pin-detail/${id}`)}
